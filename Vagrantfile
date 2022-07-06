@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
 #    ansible.limit = ansible_limit
     end
   end
-  config.vm.define "pgadminr" do |pgadmin|
+  config.vm.define "pgadmin" do |pgadmin|
 #   pgadmin.vm.box = "bento/centos-6.10"
 #   pgadmin.vm.box = "clouddood/RH7.5_baserepo"
     pgadmin.vm.box = "clouddood/RH7.9_infra"
