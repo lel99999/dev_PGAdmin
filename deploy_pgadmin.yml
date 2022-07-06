@@ -49,10 +49,13 @@
 #      with_item:
 #        - mesos
 #        - marathon 
+
     - name: Add pgAdmin4 repository
       yum:
         name: https://ftp.postgresql.org/pub/pgadmin/pgadmin4/yum/pgadmin4-redhat-repo-2-1.noarch.rpm
         state: present
+#       sslverify: no
+        validate_certs: no
       become: yes
       become_method: sudo
 
@@ -73,7 +76,7 @@
     - name: Configure Firewall Rules
       shell: "{{ item }}"
       with_items:
-        - firewall-cmd --permanent --add-service=hhtp
+        - firewall-cmd --permanent --add-service=http
         - firewall-cmd --reload
       become: yes
       become_method: sudo
