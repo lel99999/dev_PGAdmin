@@ -42,15 +42,9 @@
 #        name: http://repos.mesosphere.io/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm
 #        state: present
 
-#    - name: Install Mesos & Marathon (all nodes)
-#      yum:
-#        name: "{{ item }}"
-#        state: present
-#      with_item:
-#        - mesos
-#        - marathon 
 
   roles:
+    - pgadmin4
 #   - chromeRH7
 #   - emacsRH7
 #   - epel7
@@ -61,7 +55,7 @@
 #   - postgresql-client7
 #   - sasRH7
 #   - stattransfer14
-    - redis7
+#   - redis7
 
   post_tasks:
 #   - name: register mime types
