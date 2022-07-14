@@ -1,4 +1,4 @@
-FROM centos/postgresql-96-centos7
+FROM postgres
 
-USER root
-RUN yum install -y net-tools vim
+# run create.sql on init
+ADD create.sql /docker-entrypoint-initdb.d
